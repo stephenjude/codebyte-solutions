@@ -1,33 +1,27 @@
 <?php 
   
 function PalindromicSubstring($str) {
+  $maximum = 0;
+  $maxLength = 0;
+  $arr = [];
+  $newStr = "^#".implode("#", str_split($str))."#\0";
 
-      $maxxy = 0;
-      
-	    $maxLength = 0;
-      
-	    $arr = [];
-      
-	    $newStr = "^#" . implode("#", str_split($str)) . "#\0";
-      
-	    for ($i = 2; $newStr[$i] != "\0"; $i++) {
-      
-	        $arr[$i] = 1;
-          
-	        while ($newStr[$i - $arr[$i]] == $newStr[$i + $arr[$i]]) {
-          
-	            $arr[$i]++;
-	        }
-          
-	        if ($arr[$i] > $maxLength) {
-	            $maxLength = $arr[$i];
-	            $maxxy = $i;
-	        }
-	    }
-      
-	    $res = substr($newStr, $maxxy - $maxLength + 1, $maxLength * 2 - 1);
-      
-	    $output = str_replace('#', "", $res);
+  for($index = 2; $newStr[$index] != "\0"; $index++){
+    $arr[$index] = 1;
     
-      return $output > 2 ? $output : 'none';
+    while($newStr[$index - $arr[$index]]  == $newStr[$index + $arr[$index]]){
+      $arr[$index]++;
+    }
+
+    if($arr[$index] > $maxLength){
+      $maxLength = $arr[$index];
+      $maximum = $index;
+    }
+  }
+
+  $result = substr($newStr, $maximum - $maxLength + 1, $maxLength * 2 - 1);
+
+  $output = str_replace('#', '', $result);
+
+  return strlen($output) > 2 ? $output : 'none';
 }
