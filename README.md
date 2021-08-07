@@ -1,6 +1,6 @@
 # codebyte-solutions
 
-##### Algorithm solutions I made for RelianceHMO Lead Backend Engineer code test. 
+##### My Algorithm solutions for RelianceHMO Lead Backend Engineer code test. 
 
 ##### All the solutions are implemented in vanilla PHP. 
 
