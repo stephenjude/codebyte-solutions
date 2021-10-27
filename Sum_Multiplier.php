@@ -29,7 +29,7 @@ function sumMultiplier($arr): string
 
 }
 
-//Try changing each item of the array for different output
+//Try changing each item of the input array for different output
 //You can get an idea of sample input from Sum_multiplier.MD
 $arr = [2, 5, 6, -6, 16, 2, 3, 6, 5, 3];
 echo sumMultiplier($arr);
